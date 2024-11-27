@@ -1,0 +1,43 @@
+Program: 17 Display the seating arrangement in theatre using C program. The theater has a fixed 
+number of rows and seats per row. Create a seating chart where each seat is 
+identified by its row and seat number. Additionally, the program should allow the 
+user to mark certain seats as reserved. The seating chart should be displayed with 
+indicators showing which seats are reserved and which are available. 
+Code: // Practical 17: Create Simple Ticket Booking Program. 
+#include<stdio.h> 
+void main() 
+{ 
+    int R,C,x,y;   //R=Row,C=Column,x=Number Of Seats For Book,y=Loop. 
+   char Z[10][10]; //Shows The Seating Chart(10 rows and 10 columns). 
+ 
+        // Shows The Seating Chart With 'o' To Show That Seat Is Available. 
+        for(R=0;R<10;R++) 
+        { 
+            for(C=0;C<10;C++) 
+            { 
+                Z[R][C]='o';// For Show Seat Is Available. 
+            } 
+        } 
+    printf("Enter Number Of Seat That You Wants To Buy::");// To Know How Many Seats Users 
+Want. 
+    scanf("%d",&x); 
+    for (y=0;y<x;y++)  //Here This Loop Stands For Select Seat In Any Row. 
+    { 
+        printf("Enter Row And Seat Number That You Want To Select(Row,Seat) %d :",y+1); 
+        scanf("%d",&R);
+        // Select Row.
+         scanf("%d",&C);// Select Column. 
+            Z[R-1][C-1]=88;// Here 88 Is Binary Number Of X And It Shows That The Seat Is Confirm. 
+    } 
+    printf("\nChart Of Seating::\n"); 
+    for(R=0;R<10;R++)// Here This Loop Stands For Shows The Seating Chart. 
+    { 
+        printf("ROW%d:",R+1); 
+        for(C=0;C<10;C++) 
+        { 
+            printf(" %c",Z[R][C]); 
+        } 
+        printf("\n");// New Line After Each Row. 
+    }
+printf("\n\n\n24ce032_TARANG");
+}
